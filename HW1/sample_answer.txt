@@ -1,4 +1,4 @@
-There are XXXX sentences in HW2.txt. XXXX of them include !?+-.
+There are XXXX sentences in HW1.txt. XXXX of them include !?+-.
 length before trim after trim
   <=40           X         XX
   <=50         XXX        XXX
