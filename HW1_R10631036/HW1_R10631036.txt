@@ -1,0 +1,8 @@
+There are 539 sentences in HW1.txt. 21 of them include !?+-.
+length before trim after trim
+  <=40          27         28
+  <=50         161        164
+  <=60         156        155
+  <=70         121        121
+  <=80          61         60
+   >80          13         11
