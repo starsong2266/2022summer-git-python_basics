@@ -7,15 +7,17 @@ r=0
 r1=0
 L_40=0;L_50=0;L_60=0;L_70=0;L_80=0;L_80UP=0
 TL_40=0;TL_50=0;TL_60=0;TL_70=0;TL_80=0;TL_80UP=0
-for line in f.readlines():
-    SENTENCE.append(line)
-    print('Original Line:',SENTENCE[r])
+for line in f.readlines():    
+    SENTENCE.append(line.replace('\n',''))
+    #print('Original Line:',SENTENCE[r])
+
     for x in range (len(characters)):
         line=line.replace(characters[x],'')
-    TrimmedSENTENCE.append(line)
-    print('Trimmed Line:',TrimmedSENTENCE[r],'\n')
+
+    TrimmedSENTENCE.append(line.replace('\n',''))
+    #print('Trimmed Line:',TrimmedSENTENCE[r],'\n')
     r+=1 
-    print('ROW:',r,'\n')
+    #print('ROW:',r,'\n')
 f.close
 
 for i in range(r):
@@ -50,7 +52,13 @@ print('{0:>6}'.format('<=60'),'{0:>11}'.format(L_60),'{0:>10}'.format(TL_60))
 print('{0:>6}'.format('<=70'),'{0:>11}'.format(L_70),'{0:>10}'.format(TL_70))
 print('{0:>6}'.format('<=80'),'{0:>11}'.format(L_80),'{0:>10}'.format(TL_80))
 print('{0:>6}'.format('>80'),'{0:>11}'.format(L_80UP),'{0:>10}'.format(TL_80UP))
-
+"""
+c=0
+for y in range (r):
+    if(len(SENTENCE[y])<=40):
+        c=c+1
+        print(c,len(SENTENCE[y]),SENTENCE[y])
+"""
 path='HW1_B09611009.txt'
 Output=open(path,'w')
 print('There are',r,'sentences in HW1.txt.',r1,'of them include !?+-.', file=Output)
