@@ -1,0 +1,1 @@
+print ("There are XXXX sentences in HW1.txt. XXXX of them include !?+-.length before trim after trim")
