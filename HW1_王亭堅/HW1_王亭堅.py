@@ -1,5 +1,5 @@
 #開啟、讀取文件檔
-article = open('2022summer-git-python_basics/HW1/HW1.txt','r',encoding='utf-8')
+article = open('2022summer-git-python_basics/HW1/HW1.txt','r')
 content = article.read()
 #print(content)
 article.close()
@@ -21,19 +21,21 @@ def counter(sentence_list, characters = None, trim = False):
     detector = False
     
     for stc in sentence_list:
-        len_stc = len(stc)+1
         
         if trim:
-            # characters = list(characters)
             for x in characters:
                 if x in stc:
                     stc = stc.replace(x,'')
-                    detector = True      
-            len_stc = len(stc)+1
+                    detector = True
             if detector:
                 num_stc_with_characters += 1
                 detector = False
-                                     
+        
+        if stc == sentence_list[0]:
+            len_stc = len(stc)+1#第一句，補上拆分時去掉的句點
+        else:
+            len_stc = len(stc)-1#其他句，補上拆分時去掉的句點，然後消除換行符號'\n'佔據的長度
+
         if len_stc <= 40:
             a+=1
         elif len_stc <= 50:
